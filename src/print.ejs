@@ -13,16 +13,17 @@
       width: 100%;
     }
 
-    th {
+    th, td {
       text-align: left;
+      padding: 0.7rem;
     }
   </style>
 </head>
-<body class="bg-gray-100">
-  <div class="m-8">
+<body class="bg-white">
+  <div class="p-8">
     <h1 class="text-3xl mb-8">Listagem de Passageiros</h1>
-    <table>
-      <thead>
+    <table class="bg-gray-50">
+      <thead class="bg-gray-300">
         <tr>
           <th>Nome</th>
           <th>Número do voo</th>
@@ -32,7 +33,7 @@
       <tbody>
         <% if (passengers.length > 0) { %>
           <% passengers.forEach(passenger => { %>
-            <tr>
+            <tr class="transition duration-300 border-t border-gray-200 hover:bg-gray-200">
               <td><%= passenger.name %> </td>
               <td><%= passenger.flightNumber %> </td>
               <td><%= passenger.time %> </td>
@@ -43,7 +44,7 @@
       <tfoot>
         <tr>
           <td colspan="2">
-
+            <%= passengers.length %> Passengers 
           </td>
         </tr>
       </tfoot>
